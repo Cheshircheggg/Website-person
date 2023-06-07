@@ -60,7 +60,7 @@ jobs:
         with:
           context: ./backend/
           push: true
-          tags: cheshirchegggkittygram_backend:latest
+          tags: cheshircheggg/kittygram_backend:latest
 
   frontend_tests:
     runs-on: ubuntu-latest
