@@ -11,13 +11,13 @@ jobs:
     # В блоке services описываются сервисы по аналогии с docker-compose.yml
     services:
       postgres:
-        image: postgres:13
+        image: postgres:13.10
         # Тут мы указываем доступы в открытом виде
         # так как база будет работать только во время прогона тестов
         env:
-          POSTGRES_USER: django_user
-          POSTGRES_PASSWORD: django_password
-          POSTGRES_DB: django_db
+          POSTGRES_USER: kittygram_user
+          POSTGRES_PASSWORD: kittygram_password
+          POSTGRES_DB: db
         ports:
           - 5432:5432
         # Эта конструкция описывает проверку готовности сервиса postgres
@@ -181,7 +181,7 @@ jobs:
         # которые нужно выполнить на сервере,
         # с которым установлено соединение
         script: |
-          cd Dev/kittygram          
+          cd Dev/kittygram_final          
           # sudo docker system prune --all --force
           # Выполняет pull образов с DockerHub
           sudo docker compose -f docker-compose.production.yml pull
