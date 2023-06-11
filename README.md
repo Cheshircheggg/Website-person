@@ -1,26 +1,59 @@
-#  Как работать с репозиторием финального задания
+![main](https://github.com/Cheshircheggg/kittygram_final/actions)
 
-## Что нужно сделать
+<h1 align="center">Kittygram</h1>
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+<h1 align="center">https://kittygramru.ddns.net/</h1>
 
-## Как проверить работу с помощью автотестов
+# Описание проекта
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
+Данный учебный проект является финальным результатом изучения Docker и технологий Cl и CD.
+
+### Main features
+
+* Separated dev and production settings
+
+* Example app with custom user model
+
+* Bootstrap static files included
+
+* User registration and logging in as demo
+
+* Procfile for easy deployments
+
+* Separated requirements files
+
+* Postgres 13.10
+
+
+
+### Как запустить проект:
+
+Установить программу контейнеризации Docker (версия 4.19.0), так же необходимо зарегистрироваться на DockerHub.
+
+Клонировать репозиторий:
+```
+git clone https://github.com/
+https://github.com/Cheshircheggg/kittygram_final/
+```
+В терминале выполнить команду:
+
+```
+docker compose -f docker-compose.production.yml up
 ```
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
+После последовательно в терминале выполнить команды для миграций и сбора статики:
 
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
+```
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
 
-## Чек-лист для проверки перед отправкой задания
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
 
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+sudo docker compose -f docker-compose.production.yml exec backend cp -r collected_static/. ../backend_static/static/
+```
+## Автор 
+
+Трубачева Екатерина (Cheshircheggg) 
+
+## Обратная связь 
+
+Электронная почта - mikuo.jovi@yandex.ru 
