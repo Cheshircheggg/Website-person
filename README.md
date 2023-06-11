@@ -80,7 +80,7 @@ sudo nano /etc/nginx/sites-enabled/default
 ```
  location / {
         proxy_set_header Host $http_host;
-        proxy_pass http://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:8080;
     }
 ```
 Поздравляю! теперь у вас есть сайт, где вы можете делиться с миром фотографиями своих котов.
