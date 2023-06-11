@@ -16,7 +16,7 @@ else:
     DEBUG = str(os.getenv('DEBUG'))
 
 
-ALLOWED_HOSTS = ['51.250.31.79', 'localhost','127.0.0.1', 'kittygramru.ddns.net']
+ALLOWED_HOSTS = ['158.160.64.17', 'localhost', '127.0.0.1', 'kittygramru.ddns.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
