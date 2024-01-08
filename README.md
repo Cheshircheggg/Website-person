@@ -1,8 +1,7 @@
 ![main](https://github.com/Cheshircheggg/kittygram_final/actions/workflows/main.yml/badge.svg)
 
-<h1 align="center">Kittygram</h1>
+<h1 align="center">типо личный сайт</h1>
 
-<h1 align="center">https://kittygramru.ddns.net/</h1>
 
 ## Технологии
 
@@ -16,7 +15,7 @@
 
 # Описание проекта
 
-Данный учебный проект является финальным результатом изучения Docker и технологий Cl и CD.
+Данный проект является финальным результатом изучения Docker и технологий Cl и CD.
 
 ### Как запустить проект:
 
